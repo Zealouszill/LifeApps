@@ -2,8 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:LifeApps"
-             x:Class="LifeApps.MainPage">
+             x:Class="LifeApps.MainPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:ViewModelLocator xmlns:vm="clr-namespace:LifeApps.ViewModelLocator" x:Key="Locator" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <StackLayout>
         <!-- Place new controls here -->
         <Label Text="Welcome to Xamarin.Forms!" 
