@@ -14,18 +14,55 @@ namespace SharedLogic
 
         public MainViewModel()
         {
+            TestString = "This word";
+
+            currentTimeFunction = 100;
+
             Timer aTimer = new Timer();
 
             aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            aTimer.Interval = 5000;
+            aTimer.Interval = 1000;
             aTimer.Enabled = true;
+
         }
 
+        
 
-        private static void OnTimedEvent(object source, ElapsedEventArgs e)
+        private double CurrentTime;
+        public double currentTimeFunction
+        {
+
+            get {
+                Debug.WriteLine("Get is called");
+                return CurrentTime; }
+            set {
+                Debug.WriteLine("Set is called");
+                SetField(ref CurrentTime, value); }
+        }
+
+        private string TestString;
+        public string testStringFunction
+        {
+            get { return TestString; }
+            set { SetField(ref TestString, value); }
+        }
+
+        private void OnTimedEvent(object source, ElapsedEventArgs e)
         {
             Debug.WriteLine("Hello World!");
+            currentTimeFunction = currentTimeFunction - 1;
+
         }
+
+
+
+
+
+
+
+
+
+
 
         #region INotifyPropertyChanged Implementation
         public event PropertyChangedEventHandler PropertyChanged;

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:LifeApps"
              x:Class="LifeApps.MainPage"
-             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+             BindingContext="{Binding mainView, Source={StaticResource Locator}}">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -16,6 +16,18 @@
         <Label Text="Welcome to Xamarin.Forms!" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
+
+        <Label Text="{Binding currentTimeFunction}" 
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" ></Label>
+
+        <Label Text="Test Text" 
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" ></Label>
+
+        <Label Text="{Binding testStringFunction}" 
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" ></Label>
     </StackLayout>
 
 </ContentPage>

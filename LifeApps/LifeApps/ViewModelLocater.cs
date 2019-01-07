@@ -7,7 +7,7 @@ namespace LifeApps
         
         public ViewModelLocator()
         {
-            MainViewModel mainView = new MainViewModel();
+            mainView = new MainViewModel();
 
             //IDataStorage testStorage = new SqliteDataStore();
             //PotentialRepository testRepo = new PotentialRepository(testStorage);
@@ -17,7 +17,7 @@ namespace LifeApps
         }
 
 
-        public MainViewModel Main { get; }
+        public MainViewModel mainView { get; }
 
 
     }
