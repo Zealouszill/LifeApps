@@ -26,7 +26,7 @@ namespace SharedLogic
 
         }
 
-        
+        //Making a push
 
         private double CurrentTime;
         public double currentTimeFunction
